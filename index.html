@@ -1,81 +1,175 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비밀번호 확인</title>
-    <style>
-        /* 배경 및 전체 레이아웃 */
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: url/배경.png; /* 배경 이미지 적용 시 */
-            background-color: #333; /* 기본 배경색 */
-            font-family: sans-serif;
-        }
-        /* 중앙 검은색 팝업창 */
-        .lock-container {
-            background-color: rgba(0, 0, 0, 0.85);
-            color: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            width: 90%;
-            max-width: 360px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-        h2 { font-size: 20px; margin-bottom: 10px; word-break: keep-all; }
-        p { font-size: 13px; color: #ccc; margin-bottom: 20px; line-height: 1.5; }
-        /* 입력창 */
-        input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 10px;
-            box-sizing: border-box;
-            font-size: 16px;
-            text-align: center;
-        }
-        /* 확인 버튼 */
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #ff4d4d; /* 이미지와 유사한 붉은 톤 */
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        button:hover { background-color: #e60000; }
-    </style>
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국가데이터처</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 기본 스타일 리셋 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
 
-<div class="lock-container">
-    <h2>세하치과 암호창 메인 서버
-    <p>비밀번호를 입력하여 접속하세요.<br>*네이버 플레이스 예약창 요청사항에 본인의 소속과 비밀번호를 적어주세요*</p>
-    
-    <input type="password" id="passwordInput" placeholder="비밀번호 입력">
-    <button onclick="checkPassword()">확인</button>
-</div>
+        body {
+            background-color: #0d111a; /* 어두운 배경색 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-<script>
-    function checkPassword() {
-        const password = document.getElementById('passwordInput').value;
-        if (password === '9999') { 
-            window.location.href = 'http://map.naver.com/p/entry/place/34347279?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.3772650&lat=36.3527016'; 
-        } else {
-            alert('비밀번호가 올바르지 않습니다.');
-        }
-    }
-</script>
+        /* 메인 카드 스타일 */
+        .login-card {
+            background-color: #151c2c;
+            width: 100%;
+            max-width: 440px;
+            padding: 45px 35px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
 
-</body>
-</html>
+        /* 상단 방패 아이콘 */
+        .icon-container {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #7b57ff, #3b66ff);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 10px 20px rgba(123, 87, 255, 0.3);
+        }
+
+        .icon-container i {
+            color: white;
+            font-size: 32px;
+        }
+
+        /* 타이틀 및 설명 */
+        h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .description {
+            color: #a0aec0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .description .highlight {
+            color: #718096;
+            font-size: 12.5px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* 입력창 스타일 */
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4a5568;
+            font-size: 16px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 16px 16px 16px 45px;
+            background-color: #1e2638;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #5a67d8;
+            background-color: #222c41;
+        }
+
+        .input-group input::placeholder {
+            color: #4a5568;
+        }
+
+        /* 확인 버튼 스타일 (그라데이션) */
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(90deg, #9f5cf0, #3b66ff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* 하단 구분선 및 안내사항 */
+        .divider-container {
+            margin: 30px 0 20px 0;
+            position: relative;
+        }
+
+        .divider-line {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.05);
+            width: 100%;
+        }
+
+        .divider-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #151c2c;
+            padding: 0 15px;
+            color: #4a5568;
+            font-size: 12px;
+        }
+
+        .notice {
+            color: #718096;
+            font-size: 12.5px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* 최하단 Secure Access */
+        .secure-footer {
+            color: #38a169;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            justify-content
