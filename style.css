@@ -37,9 +37,7 @@ radial-gradient(circle at bottom,#18243d 0%,transparent 40%),
 }
 
 .card{
-    width:92%;
-    max-width:430px;
-}
+
 position:relative;
 
 width:430px;
