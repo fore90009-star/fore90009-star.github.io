@@ -1,37 +1,194 @@
-// 접속 비밀번호
+/* ==========================================================
+   SETTINGS
+========================================================== */
+
+// 원하는 비밀번호로 변경하세요.
 const PASSWORD = "029424";
 
-// 이동할 주소
-const REDIRECT_URL = "https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%20%EC%84%B8%ED%95%98%EC%B9%98%EA%B3%BC/place/34347279?placePath=%2Fhome%3FabtExp%3DNEW-PLACE-SEARCH%3A5%26bk_query%3D%EB%8C%80%EC%A0%84%20%EC%84%B8%ED%95%98%EC%B9%98%EA%B3%BC%26entry%3Dpll%26from%3Dnx%26fromNxList%3Dtrue%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202607041323%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EB%8C%80%EC%A0%84%20%EC%84%B8%ED%95%98%EC%B9%98%EA%B3%BC&bk_query=%EB%8C%80%EC%A0%84%20%EC%84%B8%ED%95%98%EC%B9%98%EA%B3%BC&entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh";
+/* ==========================================================
+   ELEMENTS
+========================================================== */
 
-const loginBtn = document.getElementById("loginBtn");
-const input = document.getElementById("pw");
+const card = document.getElementById("card");
+const input = document.getElementById("password");
+const button = document.getElementById("loginBtn");
 
-// 확인 버튼 클릭
-loginBtn.addEventListener("click", login);
+/* ==========================================================
+   CARD 3D EFFECT
+========================================================== */
 
-// 엔터키 로그인
-input.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-        login();
-    }
+document.addEventListener("mousemove",(e)=>{
+
+    const x = (window.innerWidth / 2 - e.clientX) / 30;
+    const y = (window.innerHeight / 2 - e.clientY) / 30;
+
+    card.style.transform =
+        `rotateY(${x}deg) rotateX(${-y}deg)`;
+
 });
 
-function login() {
+document.addEventListener("mouseleave",()=>{
 
-    const pw = input.value.trim();
+    card.style.transform="rotateX(0deg) rotateY(0deg)";
 
-    if (pw === PASSWORD) {
+});
 
-        // 성공 시 이동
-        window.location.href = REDIRECT_URL;
+/* ==========================================================
+   BUTTON RIPPLE
+========================================================== */
 
-    } else {
+button.addEventListener("click",function(e){
 
-        alert("비밀번호가 올바르지 않습니다.");
-        input.value = "";
-        input.focus();
+    const ripple=document.createElement("span");
+
+    ripple.className="ripple";
+
+    const rect=this.getBoundingClientRect();
+
+    ripple.style.left=(e.clientX-rect.left)+"px";
+    ripple.style.top=(e.clientY-rect.top)+"px";
+
+    this.appendChild(ripple);
+
+    setTimeout(()=>{
+
+        ripple.remove();
+
+    },700);
+
+});
+
+/* ==========================================================
+   LOGIN
+========================================================== */
+
+button.addEventListener("click",login);
+
+input.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+
+        login();
+
+    }
+
+});
+
+function login(){
+
+    const value=input.value.trim();
+
+    if(value===PASSWORD){
+
+        success();
+
+    }else{
+
+        fail();
 
     }
 
 }
+
+/* ==========================================================
+   SUCCESS
+========================================================== */
+
+function success(){
+
+    button.innerHTML="✔ 승인 완료";
+
+    button.style.background=
+    "linear-gradient(90deg,#38d66b,#7dff99)";
+
+    button.style.color="#0b2514";
+
+    card.animate([
+
+        {transform:"scale(1)"},
+        {transform:"scale(1.02)"},
+        {transform:"scale(1)"}
+
+    ],{
+
+        duration:500
+
+    });
+
+    setTimeout(()=>{
+
+        // 이동할 페이지
+        window.location.href="main.html";
+
+    },900);
+
+}
+
+/* ==========================================================
+   FAIL
+========================================================== */
+
+function fail(){
+
+    input.value="";
+
+    input.placeholder="비밀번호가 올바르지 않습니다.";
+
+    input.focus();
+
+    card.classList.add("shake");
+
+    setTimeout(()=>{
+
+        card.classList.remove("shake");
+
+    },500);
+
+}
+
+/* ==========================================================
+   INPUT GLOW
+========================================================== */
+
+input.addEventListener("focus",()=>{
+
+    card.style.boxShadow=
+    "0 0 60px rgba(255,120,30,.25),0 30px 80px rgba(0,0,0,.55)";
+
+});
+
+input.addEventListener("blur",()=>{
+
+    card.style.boxShadow="";
+
+});
+
+/* ==========================================================
+   BUTTON HOVER GLOW
+========================================================== */
+
+button.addEventListener("mouseenter",()=>{
+
+    button.style.filter="brightness(1.08)";
+
+});
+
+button.addEventListener("mouseleave",()=>{
+
+    button.style.filter="";
+
+});
+
+/* ==========================================================
+   RANDOM BACKGROUND MOVEMENT
+========================================================== */
+
+setInterval(()=>{
+
+    document.querySelector(".glow1").style.transform=
+    `translate(${Math.random()*40}px,${Math.random()*20}px)`;
+
+    document.querySelector(".glow2").style.transform=
+    `translate(-${Math.random()*30}px,${Math.random()*40}px)`;
+
+},5000);
