@@ -118,7 +118,7 @@ function success() {
     setTimeout(() => {
 
         // Google Drive 폴더로 이동
-        window.location.href = "https://drive.google.com/drive/my-drive?hl=ko";
+        window.location.href = "https://drive.google.com/drive/folders/1jBFRr2qg2sVYnWPCo6V8P8aJqS604mx7";
 
     }, 900);
 
