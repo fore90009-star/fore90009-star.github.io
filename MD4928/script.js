@@ -17,7 +17,7 @@ const button = document.getElementById("loginBtn");
    CARD 3D EFFECT
 ========================================================== */
 
-document.addEventListener("mousemove",(e)=>{
+document.addEventListener("mousemove", (e) => {
 
     const x = (window.innerWidth / 2 - e.clientX) / 30;
     const y = (window.innerHeight / 2 - e.clientY) / 30;
@@ -27,9 +27,9 @@ document.addEventListener("mousemove",(e)=>{
 
 });
 
-document.addEventListener("mouseleave",()=>{
+document.addEventListener("mouseleave", () => {
 
-    card.style.transform="rotateX(0deg) rotateY(0deg)";
+    card.style.transform = "rotateX(0deg) rotateY(0deg)";
 
 });
 
@@ -37,24 +37,24 @@ document.addEventListener("mouseleave",()=>{
    BUTTON RIPPLE
 ========================================================== */
 
-button.addEventListener("click",function(e){
+button.addEventListener("click", function (e) {
 
-    const ripple=document.createElement("span");
+    const ripple = document.createElement("span");
 
-    ripple.className="ripple";
+    ripple.className = "ripple";
 
-    const rect=this.getBoundingClientRect();
+    const rect = this.getBoundingClientRect();
 
-    ripple.style.left=(e.clientX-rect.left)+"px";
-    ripple.style.top=(e.clientY-rect.top)+"px";
+    ripple.style.left = (e.clientX - rect.left) + "px";
+    ripple.style.top = (e.clientY - rect.top) + "px";
 
     this.appendChild(ripple);
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         ripple.remove();
 
-    },700);
+    }, 700);
 
 });
 
@@ -62,11 +62,11 @@ button.addEventListener("click",function(e){
    LOGIN
 ========================================================== */
 
-button.addEventListener("click",login);
+button.addEventListener("click", login);
 
-input.addEventListener("keydown",function(e){
+input.addEventListener("keydown", function (e) {
 
-    if(e.key==="Enter"){
+    if (e.key === "Enter") {
 
         login();
 
@@ -74,15 +74,15 @@ input.addEventListener("keydown",function(e){
 
 });
 
-function login(){
+function login() {
 
-    const value=input.value.trim();
+    const value = input.value.trim();
 
-    if(value===PASSWORD){
+    if (value === PASSWORD) {
 
         success();
 
-    }else{
+    } else {
 
         fail();
 
@@ -94,33 +94,33 @@ function login(){
    SUCCESS
 ========================================================== */
 
-function success(){
+function success() {
 
-    button.innerHTML="✔ 승인 완료";
+    button.innerHTML = "✔ 승인 완료";
 
-    button.style.background=
-    "linear-gradient(90deg,#38d66b,#7dff99)";
+    button.style.background =
+        "linear-gradient(90deg,#38d66b,#7dff99)";
 
-    button.style.color="#0b2514";
+    button.style.color = "#0b2514";
 
     card.animate([
 
-        {transform:"scale(1)"},
-        {transform:"scale(1.02)"},
-        {transform:"scale(1)"}
+        { transform: "scale(1)" },
+        { transform: "scale(1.02)" },
+        { transform: "scale(1)" }
 
-    ],{
+    ], {
 
-        duration:500
+        duration: 500
 
     });
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        // 이동할 페이지
-        window.location.href="main.html";
+        // Google Drive 폴더로 이동
+        window.location.href = "https://drive.google.com/drive/folders/1jBFRr2qg2sVYnWPCo6V8P8aJqS604mx7";
 
-    },900);
+    }, 900);
 
 }
 
@@ -128,21 +128,21 @@ function success(){
    FAIL
 ========================================================== */
 
-function fail(){
+function fail() {
 
-    input.value="";
+    input.value = "";
 
-    input.placeholder="비밀번호가 올바르지 않습니다.";
+    input.placeholder = "비밀번호가 올바르지 않습니다.";
 
     input.focus();
 
     card.classList.add("shake");
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         card.classList.remove("shake");
 
-    },500);
+    }, 500);
 
 }
 
@@ -150,16 +150,16 @@ function fail(){
    INPUT GLOW
 ========================================================== */
 
-input.addEventListener("focus",()=>{
+input.addEventListener("focus", () => {
 
-    card.style.boxShadow=
-    "0 0 60px rgba(255,120,30,.25),0 30px 80px rgba(0,0,0,.55)";
+    card.style.boxShadow =
+        "0 0 60px rgba(255,120,30,.25),0 30px 80px rgba(0,0,0,.55)";
 
 });
 
-input.addEventListener("blur",()=>{
+input.addEventListener("blur", () => {
 
-    card.style.boxShadow="";
+    card.style.boxShadow = "";
 
 });
 
@@ -167,15 +167,15 @@ input.addEventListener("blur",()=>{
    BUTTON HOVER GLOW
 ========================================================== */
 
-button.addEventListener("mouseenter",()=>{
+button.addEventListener("mouseenter", () => {
 
-    button.style.filter="brightness(1.08)";
+    button.style.filter = "brightness(1.08)";
 
 });
 
-button.addEventListener("mouseleave",()=>{
+button.addEventListener("mouseleave", () => {
 
-    button.style.filter="";
+    button.style.filter = "";
 
 });
 
@@ -183,12 +183,12 @@ button.addEventListener("mouseleave",()=>{
    RANDOM BACKGROUND MOVEMENT
 ========================================================== */
 
-setInterval(()=>{
+setInterval(() => {
 
-    document.querySelector(".glow1").style.transform=
-    `translate(${Math.random()*40}px,${Math.random()*20}px)`;
+    document.querySelector(".glow1").style.transform =
+        `translate(${Math.random() * 40}px,${Math.random() * 20}px)`;
 
-    document.querySelector(".glow2").style.transform=
-    `translate(-${Math.random()*30}px,${Math.random()*40}px)`;
+    document.querySelector(".glow2").style.transform =
+        `translate(-${Math.random() * 30}px,${Math.random() * 40}px)`;
 
-},5000);
+}, 5000);
