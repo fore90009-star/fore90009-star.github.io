@@ -1,5 +1,5 @@
 // 접속 비밀번호
-const PASSWORD = "2580";
+const PASSWORD = "0125";
 
 // 이동할 주소
 const REDIRECT_URL = "https://naver.me/xLWVRN1y"
