@@ -378,3 +378,425 @@ input:focus{
     0 0 18px rgba(255,130,60,.35);
 
 }
+/* ==========================================================
+   LOGIN BUTTON
+========================================================== */
+
+button{
+
+    position:relative;
+
+    width:100%;
+    height:78px;
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+
+    font-size:26px;
+    font-weight:800;
+
+    color:#161616;
+
+    background:linear-gradient(
+        90deg,
+        #ff2f5b 0%,
+        #ff7f2f 45%,
+        #ffd928 100%
+    );
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 35px rgba(255,90,40,.35),
+    0 0 40px rgba(255,150,30,.25);
+
+}
+
+/* Shine Effect */
+
+button .shine{
+
+    position:absolute;
+
+    left:-120px;
+
+    width:90px;
+    height:160%;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.55),
+    transparent);
+
+    transform:rotate(20deg);
+
+    animation:shine 3.5s infinite;
+
+}
+
+@keyframes shine{
+
+0%{
+
+left:-140px;
+
+}
+
+100%{
+
+left:850px;
+
+}
+
+}
+
+/* Hover */
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 18px 45px rgba(255,120,40,.5),
+0 0 50px rgba(255,180,20,.4);
+
+}
+
+/* Click */
+
+button:active{
+
+transform:scale(.98);
+
+}
+
+/* Shield */
+
+.shield-icon{
+
+width:24px;
+
+height:24px;
+
+fill:none;
+
+stroke:#222;
+
+stroke-width:2.2;
+
+stroke-linecap:round;
+
+stroke-linejoin:round;
+
+}
+
+/* ==========================================================
+DIVIDER
+========================================================== */
+
+.divider{
+
+display:flex;
+
+align-items:center;
+
+margin:40px 0 24px;
+
+}
+
+.divider::before,
+.divider::after{
+
+content:"";
+
+flex:1;
+
+height:1px;
+
+background:
+
+rgba(255,255,255,.09);
+
+}
+
+.divider span{
+
+padding:0 18px;
+
+font-size:18px;
+
+color:#999;
+
+}
+
+/* ==========================================================
+INFO
+========================================================== */
+
+.info{
+
+text-align:center;
+
+}
+
+.info p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#d5d5d5;
+
+margin:8px 0;
+
+}
+
+/* ==========================================================
+FOOTER
+========================================================== */
+
+.footer{
+
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+font-size:26px;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+background:linear-gradient(
+90deg,
+#ff4b4b,
+#ff8a2e,
+#ffd51d);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+filter:
+
+drop-shadow(0 0 12px rgba(255,130,20,.4));
+
+}
+
+.mini-warning{
+
+width:22px;
+
+height:22px;
+
+stroke:#ffba32;
+
+stroke-width:3;
+
+fill:none;
+
+}
+
+/* ==========================================================
+CARD HOVER
+========================================================== */
+
+.card{
+
+transition:
+transform .25s,
+box-shadow .25s;
+
+}
+
+.card:hover{
+
+transform:
+
+translateY(-4px);
+
+box-shadow:
+
+0 40px 90px rgba(0,0,0,.65),
+
+0 0 40px rgba(255,120,40,.08);
+
+}
+
+/* ==========================================================
+INPUT ANIMATION
+========================================================== */
+
+input{
+
+transition:
+
+.25s;
+
+}
+
+input:hover{
+
+background:#302727;
+
+}
+
+/* ==========================================================
+SCROLL BAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#555;
+
+border-radius:30px;
+
+}
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+.card{
+
+padding:35px 22px;
+
+}
+
+.warning-icon{
+
+width:72px;
+height:72px;
+
+}
+
+h1{
+
+font-size:38px;
+
+}
+
+h2{
+
+font-size:20px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.notice-top{
+
+font-size:14px;
+
+}
+
+input{
+
+height:62px;
+
+font-size:18px;
+
+}
+
+button{
+
+height:64px;
+
+font-size:20px;
+
+}
+
+.info p{
+
+font-size:15px;
+
+}
+
+.footer{
+
+font-size:18px;
+
+}
+
+}
+
+/* ==========================================================
+BACKGROUND ANIMATION
+========================================================== */
+
+.glow1{
+
+animation:glowMove1 10s ease-in-out infinite alternate;
+
+}
+
+.glow2{
+
+animation:glowMove2 12s ease-in-out infinite alternate;
+
+}
+
+@keyframes glowMove1{
+
+from{
+
+transform:translate(-40px,-20px);
+
+}
+
+to{
+
+transform:translate(40px,20px);
+
+}
+
+}
+
+@keyframes glowMove2{
+
+from{
+
+transform:translate(20px,-30px);
+
+}
+
+to{
+
+transform:translate(-30px,40px);
+
+}
+
+}
