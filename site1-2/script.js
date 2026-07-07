@@ -2,7 +2,7 @@
 const PASSWORD = "2580";
 
 // 이동할 주소
-const REDIRECT_URL = https://naver.me/xLWVRN1y
+const REDIRECT_URL = "https://naver.me/xLWVRN1y"
 
 const loginBtn = document.getElementById("loginBtn");
 const input = document.getElementById("pw");
