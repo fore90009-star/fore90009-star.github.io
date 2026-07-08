@@ -2,177 +2,50 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>김주임 개인 사이트</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- =========================
-배경
-========================= -->
-
 <div class="background">
-    <div class="bg-glow glow1"></div>
-    <div class="bg-glow glow2"></div>
+<div class="bg-glow glow1"></div>
+<div class="bg-glow glow2"></div>
 </div>
 
-<!-- =========================
-로그인 화면
-========================= -->
-
 <div id="loginPage">
-
 <div class="card" id="card">
 
 <div class="warning-area">
-
-<svg class="warning-icon" viewBox="0 0 64 64">
-
-<defs>
-<linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#ff355d"/>
-<stop offset="100%" stop-color="#ffd500"/>
-</linearGradient>
-</defs>
-
-<path
-d="M32 6 L58 52 H6 Z"
-fill="none"
-stroke="url(#warningGradient)"
-stroke-width="3"
-stroke-linejoin="round"/>
-
-<rect
-x="30"
-y="20"
-width="4"
-height="17"
-rx="2"
-fill="url(#warningGradient)"/>
-
-<circle
-cx="32"
-cy="44"
-r="2.8"
-fill="#ffd500"/>
-
-</svg>
-
+<h2>⚠</h2>
 </div>
 
 <h1>김주임 서류함</h1>
-
 <h2>기밀서류 접근 금지</h2>
-
-<p class="subtitle">
-승인된 사용자 비밀번호를 입력하세요.
-</p>
-
-<p class="notice-top">
-Unauthorized Access Forbidden
-</p>
+<p class="subtitle">승인된 사용자 비밀번호를 입력하세요.</p>
+<p class="notice-top">Unauthorized Access Forbidden</p>
 
 <div class="input-box">
-
-<svg class="lock-icon" viewBox="0 0 24 24">
-
-<path
-d="M7 10V7a5 5 0 0110 0v3"
-fill="none"
-stroke="currentColor"
-stroke-width="2"/>
-
-<rect
-x="5"
-y="10"
-width="14"
-height="10"
-rx="2"
-fill="none"
-stroke="currentColor"
-stroke-width="2"/>
-
-</svg>
-
-<input
-type="password"
-id="password"
-placeholder="비밀번호 입력">
-
+<input type="password" id="password" placeholder="비밀번호 입력">
 </div>
 
 <button id="loginBtn">
-
 <span class="shine"></span>
-
-<svg class="shield-icon" viewBox="0 0 24 24">
-
-<path
-d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"
-fill="none"
-stroke="currentColor"
-stroke-width="2"/>
-
-<path
-d="M9.5 12l2 2 4-4"
-fill="none"
-stroke="currentColor"
-stroke-width="2"/>
-
-</svg>
-
 승인 요청
-
 </button>
 
-<div class="divider">
-<span>안내사항</span>
-</div>
+<div class="divider"><span>안내사항</span></div>
 
 <div class="info">
 <p>For support - fore90009@gmail.com</p>
 </div>
 
 <div class="footer">
-
-<svg class="mini-warning" viewBox="0 0 64 64">
-
-<path
-d="M32 6 L58 52 H6 Z"
-fill="none"
-stroke="#ffb300"
-stroke-width="3"/>
-
-<rect
-x="30"
-y="20"
-width="4"
-height="17"
-rx="2"
-fill="#ffb300"/>
-
-<circle
-cx="32"
-cy="44"
-r="2.5"
-fill="#ffb300"/>
-
-</svg>
-
 <span>RESTRICTED PROJECT</span>
-
 </div>
 
 </div>
-
 </div>
-
-<!-- =========================
-링크트리 화면
-========================= -->
 
 <div id="linkTree" style="display:none;">
 
@@ -182,44 +55,27 @@ fill="#ffb300"/>
 
 <h1 class="treeTitle">김주임 서류함</h1>
 
-<p class="treeSub">
-비인가 접근 금지
-</p>
+<p class="treeSub">승인된 사용자 전용 메뉴</p>
 
 <div class="treeButtons">
 
-<a href="https://drive.google.com/" target="_blank" class="treeBtn">
-1. 드라이브
-</a>
+<a class="treeBtn" href="https://example.com" target="_blank">📁 드라이브</a>
 
-<a href="#" class="treeBtn">
-2. 문서
-</a>
+<a class="treeBtn" href="https://example.com" target="_blank">📄 문서</a>
 
-<a href="#" class="treeBtn">
-3. 보안파일
-</a>
+<a class="treeBtn" href="https://example.com" target="_blank">🔒 보안파일</a>
 
-<a href="#" class="treeBtn">
-4. AS
-</a>
+<a class="treeBtn" href="https://example.com" target="_blank">🛠 AS 요청</a>
 
 </div>
 
 <div class="contact">
-
 <h3>CONTACT ME</h3>
 
 <div class="icons">
-
 <a href="mailto:fore90009@gmail.com">📧</a>
-
-<a href="#">🌐</a>
-
-<a href="https://github.com/" target="_blank">
-<img src="github.png" class="git">
-</a>
-
+<a href="https://example.com">🌐</a>
+<a href="https://github.com"><img src="github.png" class="git"></a>
 </div>
 
 </div>
@@ -229,6 +85,4 @@ fill="#ffb300"/>
 </div>
 
 <script src="script.js"></script>
-
 </body>
-</html>
