@@ -8,176 +8,223 @@
 
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- 배경 -->
+<!-- =========================
+배경
+========================= -->
+
 <div class="background">
     <div class="bg-glow glow1"></div>
     <div class="bg-glow glow2"></div>
-    <div class="noise"></div>
 </div>
 
-<!-- 메인 카드 -->
+<!-- =========================
+로그인 화면
+========================= -->
+
+<div id="loginPage">
+
 <div class="card" id="card">
 
-    <!-- 경고 아이콘 -->
-    <div class="warning-area">
+<div class="warning-area">
 
-        <svg class="warning-icon" viewBox="0 0 64 64">
+<svg class="warning-icon" viewBox="0 0 64 64">
 
-            <defs>
-                <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#ff355d"/>
-                    <stop offset="100%" stop-color="#ffd500"/>
-                </linearGradient>
-            </defs>
+<defs>
+<linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#ff355d"/>
+<stop offset="100%" stop-color="#ffd500"/>
+</linearGradient>
+</defs>
 
-            <!-- 삼각형 -->
-            <path
-                d="M32 6 L58 52 H6 Z"
-                fill="none"
-                stroke="url(#warningGradient)"
-                stroke-width="3"
-                stroke-linejoin="round"/>
+<path
+d="M32 6 L58 52 H6 Z"
+fill="none"
+stroke="url(#warningGradient)"
+stroke-width="3"
+stroke-linejoin="round"/>
 
-            <!-- 느낌표 -->
-            <rect
-                x="30"
-                y="20"
-                width="4"
-                height="17"
-                rx="2"
-                fill="url(#warningGradient)"/>
+<rect
+x="30"
+y="20"
+width="4"
+height="17"
+rx="2"
+fill="url(#warningGradient)"/>
 
-            <!-- 점 -->
-            <circle
-                cx="32"
-                cy="44"
-                r="2.8"
-                fill="#ffd500"/>
+<circle
+cx="32"
+cy="44"
+r="2.8"
+fill="#ffd500"/>
 
-        </svg>
+</svg>
 
-    </div>
+</div>
 
-    <!-- 제목 -->
+<h1>김주임 서류함</h1>
 
-    <h1>김주임 서류함</h1>
+<h2>기밀서류 접근 금지</h2>
 
-    <h2>기밀서류 접근 금지</h2>
+<p class="subtitle">
+승인된 사용자 비밀번호를 입력하세요.
+</p>
 
-    <p class="subtitle">
-        승인된 사용자 비밀번호를 입력하세요.
-    </p>
+<p class="notice-top">
+Unauthorized Access Forbidden
+</p>
 
-    <p class="notice-top">
-        *Unauthorized Access Forbidden*
-    </p>
+<div class="input-box">
 
-    <!-- 입력창 -->
+<svg class="lock-icon" viewBox="0 0 24 24">
 
-    <div class="input-box">
+<path
+d="M7 10V7a5 5 0 0110 0v3"
+fill="none"
+stroke="currentColor"
+stroke-width="2"/>
 
-        <svg class="lock-icon" viewBox="0 0 24 24">
+<rect
+x="5"
+y="10"
+width="14"
+height="10"
+rx="2"
+fill="none"
+stroke="currentColor"
+stroke-width="2"/>
 
-            <path
-                d="M7 10V7a5 5 0 0110 0v3"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"/>
+</svg>
 
-            <rect
-                x="5"
-                y="10"
-                width="14"
-                height="10"
-                rx="2"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"/>
+<input
+type="password"
+id="password"
+placeholder="비밀번호 입력">
 
-        </svg>
+</div>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="비밀번호 입력">
+<button id="loginBtn">
 
-    </div>
+<span class="shine"></span>
 
-    <!-- 버튼 -->
+<svg class="shield-icon" viewBox="0 0 24 24">
 
-    <button id="loginBtn">
+<path
+d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"
+fill="none"
+stroke="currentColor"
+stroke-width="2"/>
 
-        <span class="shine"></span>
+<path
+d="M9.5 12l2 2 4-4"
+fill="none"
+stroke="currentColor"
+stroke-width="2"/>
 
-        <svg class="shield-icon" viewBox="0 0 24 24">
+</svg>
 
-            <path
-                d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"/>
+승인 요청
 
-            <path
-                d="M9.5 12l2 2 4-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"/>
+</button>
 
-        </svg>
+<div class="divider">
+<span>안내사항</span>
+</div>
 
-        승인 요청
+<div class="info">
+<p>For support - fore90009@gmail.com</p>
+</div>
 
-    </button>
+<div class="footer">
 
-    <!-- 구분선 -->
+<svg class="mini-warning" viewBox="0 0 64 64">
 
-    <div class="divider">
-        <span>안내사항</span>
-    </div>
+<path
+d="M32 6 L58 52 H6 Z"
+fill="none"
+stroke="#ffb300"
+stroke-width="3"/>
 
-    <!-- 안내 -->
+<rect
+x="30"
+y="20"
+width="4"
+height="17"
+rx="2"
+fill="#ffb300"/>
 
-    <div class="info">
+<circle
+cx="32"
+cy="44"
+r="2.5"
+fill="#ffb300"/>
 
-        <p>For support - fore90009 @ gmail.com</p>
+</svg>
 
-    </div>
+<span>RESTRICTED PROJECT</span>
 
-    <!-- 하단 -->
+</div>
 
-    <div class="footer">
+</div>
 
-        <svg class="mini-warning" viewBox="0 0 64 64">
+</div>
 
-            <path
-                d="M32 6 L58 52 H6 Z"
-                fill="none"
-                stroke="#ffb300"
-                stroke-width="3"
-                stroke-linejoin="round"/>
+<!-- =========================
+링크트리 화면
+========================= -->
 
-            <rect
-                x="30"
-                y="20"
-                width="4"
-                height="17"
-                rx="2"
-                fill="#ffb300"/>
+<div id="linkTree" style="display:none;">
 
-            <circle
-                cx="32"
-                cy="44"
-                r="2.5"
-                fill="#ffb300"/>
+<div class="tree">
 
-        </svg>
+<img src="profile.png" class="profile">
 
-        <span>RESTRICTED PROJECT</span>
+<h1 class="treeTitle">김주임 서류함</h1>
 
-    </div>
+<p class="treeSub">
+비인가 접근 금지
+</p>
+
+<div class="treeButtons">
+
+<a href="https://drive.google.com/" target="_blank" class="treeBtn">
+1. 드라이브
+</a>
+
+<a href="#" class="treeBtn">
+2. 문서
+</a>
+
+<a href="#" class="treeBtn">
+3. 보안파일
+</a>
+
+<a href="#" class="treeBtn">
+4. AS
+</a>
+
+</div>
+
+<div class="contact">
+
+<h3>CONTACT ME</h3>
+
+<div class="icons">
+
+<a href="mailto:fore90009@gmail.com">📧</a>
+
+<a href="#">🌐</a>
+
+<a href="https://github.com/" target="_blank">
+<img src="github.png" class="git">
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
