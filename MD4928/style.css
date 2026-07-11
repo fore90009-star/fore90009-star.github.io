@@ -846,12 +846,19 @@ transform:translate(-30px,40px);
 }
 
 .profile{
-    width:120px;
-    height:120px;
-    border-radius:50%;
+
+    width:140px;
+    height:140px;
+
     object-fit:cover;
+
+    border-radius:50%;
+
     border:4px solid #fff;
-    margin-bottom:20px;
+
+    box-shadow:
+        0 0 25px rgba(255,180,50,.4);
+
 }
 
 .treeTitle{
